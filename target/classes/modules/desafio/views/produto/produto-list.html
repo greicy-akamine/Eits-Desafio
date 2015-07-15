@@ -21,13 +21,28 @@
 							<p align="justify">{{produto.descricao}}</p>
 						</div>
 						<div>
-<!-- 						<md-button class="md-icon-lg md-icon-edit" aria-label="red" ng-click="$state.go($event,produto)"></md-button>  -->
-							<md-button class="md-icon-lg md-icon-edit" aria-label="red" ng-click="$state.go( EDIT_STATE, {id:produto.id})"></md-button>
-						</div>
-						<div>
-							<md-button class="md-icon-lg md-icon-delete" aria-label="blue" ng-click="changeToRemove($event,produto)"></md-button>
-							<md-tooltip>Remover</md-tooltip>
-						</div>
+				
+							<md-menu md-offset="-30 25">
+								<md-button aria-label="Open demo menu" class="md-icon-button md-icon-more-vert md-icon-lg" ng-click="$mdOpenMenu()">
+ 								</md-button>
+ 								<md-menu-content width="2">
+ 							
+									<md-menu-item>
+										<md-button ng-click="$state.go(EDIT_STATE, {id:produto.id})"><span md-menu-align-target>Editar</span></md-button>
+									</md-menu-item>
+									<md-menu-item>
+										<md-button ng-click="$state.go(DETAIL_STATE, {id:produto.id})"><span md-menu-align-target>Visualizar</span></md-button>
+									</md-menu-item>
+									<md-menu-item>
+										<md-button ng-click="changeToRemove($event, produto)"><span md-menu-align-target>Excluir</span></md-button>
+									</md-menu-item>
+ 							
+ 								</md-menu-content> 
+								</md-button>
+							</md-menu>
+							<md-tooltip>Opções do registro</md-tooltip>
+							
+				</div>
 					</eits-hbox>
 				</md-list-item>
 			</md-list>

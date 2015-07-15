@@ -105,6 +105,20 @@ angular.module('desafio')
         }
     });
     
+    /*-------------------------------------------------------------------
+     * 		 				 	  HANDLERS
+     *-------------------------------------------------------------------*/
+
+    /**
+     * Realiza os procedimentos iniciais (prepara o estado)
+     * para a tela de consulta e após isso, muda o estado para list.
+     * Para mudar para este estado, deve-se primeiro carregar os dados da consulta.
+     *
+     * @see $scope.LIST_STATE
+     *
+     * @param paginate boolean para saber se precisa paginar
+     */
+    
     
     $scope.changeToList = function ( usuarios, pageRequest ) {
         console.debug("changeToList");
@@ -127,6 +141,12 @@ angular.module('desafio')
 		    };
     
     
+		    /**
+		     * Handler para que realiza os procedimentos iniciais (prepara o estado)
+		     * para a tela de inserção e após isso, muda o estado para $scope.ADD_STATE.
+		     *
+		     * @see $scope.ADD_STATE
+		     */
     
     $scope.changeToAdd = function (usuarios, pageRequest ) {
         console.debug("changeToAdd");
@@ -135,6 +155,17 @@ angular.module('desafio')
         
         $scope.model.usuario.status = "true";
     };
+    
+    
+    /**
+     * Realiza os procedimentos iniciais (prepara o estado)
+     * para a tela de detalhe e após isso, muda o estado para detail.
+     *
+     * Para mudar para este estado, deve-se primeiro obter via id
+     * o registro atualizado pelo serviço de consulta e só então mudar o estado da tela.
+     *
+     * @see $scope.DETAIL_STATE
+     */
     
     $scope.changeToDetail = function ( id ) {
         console.debug("changeToDetail");
@@ -157,6 +188,17 @@ angular.module('desafio')
 
     };
     
+    
+    /**
+     * Realiza os procedimentos iniciais (prepara o estado)
+     * para a tela de edição e após isso, muda o estado para update.
+     *
+     * Para mudar para este estado, deve-se primeiro obter via id
+     * o registro pelo serviço de consulta e só então mudar o estado da tela.
+     *
+     * @see $scope.EDIT_STATE
+     */
+    
     $scope.changeToEdit = function (id) {
         console.debug("changeToEdit");
         
@@ -178,9 +220,7 @@ angular.module('desafio')
 
     };
     
-    
-  
-    
+     
     
     /**
      * Realiza a inserção de um novo registro
