@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Cadastrar Usuário</title>
+</head>
+<body>
+<div layout="column">
+  <md-toolbar class="md-primary">
+    <h1 class="md-toolbar-tools">
+      CADASTRAR USUÁRIO
+    </h1>
+  </md-toolbar>
+  
+	 <md-content layout-padding style="padding: 24px;">
+	 
+		 <form> 
+<!-- 		 name="model.form" -->
+			<md-input-container>
+			  <label>Nome</label>
+			  <input type="text" ng-model="model.usuario.nome" required md-maxlength="144">
+			</md-input-container>
+					
+					
+			<md-input-container>
+			  <label>Departamento</label>
+			  <input type="text" ng-model="model.usuario.departamento" required md-maxlength="144">
+			</md-input-container>
+			
+			<md-input-container>
+			  <label>E-mail</label>
+			  <input type="email" ng-model="model.usuario.email" required md-maxlength="144" name="email">
+			  <div ng-messages="model.form.email.$error">
+				<div ng-message="email">
+					Email inválido.
+				</div>
+			</div>
+			</md-input-container>
+			
+			<md-input-container>
+			  <label>Senha</label>
+			  <input type="text" ng-model="model.usuario.senha" required md-maxlength="8">
+			</md-input-container>
+		
+			  <md-select ng-model="model.usuario.perfil" placeholder="Selecione um perfil">
+				<md-option value="ADMINISTRATOR">Administrador</md-option>
+				<md-option value="USUARIO">Usuário</md-option>
+			 </md-select>  
+			 
+			 
+			
+			<md-radio-group ng-model="model.usuario.status" style="display:inherit;">
+			
+			 	<md-radio-button ng-value="true"  class="md-primary">Ativar</md-radio-button>
+				<md-radio-button ng-value="false" class="md-primary">Inativar</md-radio-button>
+			</md-radio-group>
+ 			
+		</form>
+	 </md-content>	 
+    
+	 <md-button class="md-fab md-fab-bottom-right md-primary md-icon-lg md-icon-save md-primary" aria-label="Salvar Usuário"
+					    ng-click="insertUsuarioHandler()" >
+	  	<md-tooltip>Salvar</md-tooltip>
+   	  </md-button>	  
+	
+  
+</div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head ng-app="desafio">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Desafio</title>
+		
+		<!-- Angular Material CSS -->
+		<link rel="stylesheet" href="./webjars/angular-material/0.10.0/angular-material.min.css">
+		
+		<!--EITS -->
+		<link rel="stylesheet" href="./webjars/eits-md/1.0.3-SNAPSHOT/eits-md.css"/></link>
+		
+		
+		
+		<!-- JQuery -->
+		<script type="text/javascript" src="./webjars/jquery/2.1.4/jquery.min.js"></script>
+		
+		
+		
+		<!-- AngularJS -->
+		<script type="text/javascript" src="./webjars/angularjs/1.4.0/angular.min.js"></script>
+		<script type="text/javascript" src="./webjars/angularjs/1.4.0/angular-animate.min.js"></script>
+		<script type="text/javascript" src="./webjars/angularjs/1.4.0/angular-aria.min.js"></script>
+		<script type="text/javascript" src="./webjars/angularjs/1.4.0/angular-messages.min.js"></script>
+		<script type="text/javascript" src="./webjars/angular-material/0.10.0/angular-material.min.js"></script>
+		<script type="text/javascript" src="./webjars/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+		
+		
+		
+		<!-- DWR -->
+ 		<script type='text/javascript' src='/broker/engine.js'></script>  		
+  		<script type='text/javascript' src='/broker/util.js'></script>
+  		
+  		
+  		
+  		<!-- Main -->
+	    <script type="text/javascript" src="./modules/desafio/desafio-modules.js?v=${version}"></script>
+  		
+  		
+		<!-- Icones -->
+		<link rel='stylesheet' href="./webjars/eits/1.0.3-SNAPSHOT/material-design-iconic-font/css/material-design-iconic-font.css">
+		
+		<!-- EITS -->
+		<script type="text/javascript" src="./webjars/eits/1.0.3-SNAPSHOT/broker/dwr-broker.js"></script>	
+		<script type="text/javascript" src="./webjars/eits-md/1.0.3-SNAPSHOT/eits-md.js"></script>
+		<script type="text/javascript" src="./webjars/eits-md/1.0.3-SNAPSHOT/controls/currency/currency.js"></script>
+		<script type="text/javascript" src="./webjars/eits-md/1.0.3-SNAPSHOT/controls/infinite-scroll/infinite-scroll.js"></script>
+		
+		
+		<!-- Controllers -->
+		<script type="text/javascript" src="./modules/desafio/controllers/categoria-controller.js?v=${version}"></script>	
+		<script type="text/javascript" src="./modules/desafio/controllers/produto-controller.js?v=${version}"></script>	
+		<script type="text/javascript" src="./modules/desafio/controllers/usuario-controller.js?v=${version}"></script>
+		<script type="text/javascript" src="./modules/desafio/controllers/menu-controller.js?v=${version}"></script>
+		
+  		
+  		<!-- SERVICES -->
+  		<script type='text/javascript' src='/broker/interface/categoriaService.js'></script> 		
+  		<script type='text/javascript' src='/broker/interface/usuarioService.js'></script> 
+  		
+</head>
+
+<body layout="row" ng-controller="MenuController">
+<div layout="column" class="relative" layout-fill role="main" id="main">
+	<md-toolbar>
+		<div class="md-toolbar-tools">
+			<md-button ng-click="openLeftMenu()" class="md-icon-button" aria-label="Menu Principal">
+				<md-icon class="md-icon-menu md-icon-lg" style="color: #FFFFFF"></md-icon>
+				<md-tooltip style="margin-left:20px;">Painel de controle</md-tooltip>
+			</md-button>
+			
+		
+			<div layout="row" flex class="fill-height" layout-align="start center" style="line-height: 38px">
+				<div class="md-toolbar-item md-breadcrumb">
+					<breadcrumb ng-repeat="item in $state.current.breadCrumbs">
+						<a ui-sref="{{ item.state }}">
+							<span class="md-breadcrumb-page"> {{ item.name }} </span>
+						</a>
+					</breadcrumb>
+				</div>
+			</div>
+		</div>
+	</md-toolbar>
+<div ui-view class="content" layout-fill>
+</div>
+<div ng-include="'modules/desafio/views/menu.html'"></div>
+	</body>
+</html>

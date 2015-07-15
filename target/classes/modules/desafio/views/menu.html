@@ -1,0 +1,35 @@
+<md-sidenav md-component-id="left" class="md-sidenav-left" layout="column">
+	<md-toolbar class="md-tall">
+		<span flex></span>
+		<h4 class="md-toolbar-tools">
+			<span>Desafio</span>
+		</h4>
+	</md-toolbar>
+	<md-toolbar>
+		<p class="md-toolbar-tools"></p>
+	</md-toolbar>
+	<div  layout-align="start start">
+		<md-list>
+			<md-list-item ng-click="$state.go('categoria.list');closeMenu()">
+				<p>Categoria</p>
+			</md-list-item>
+		</md-list>
+	</div>
+	<div  layout-align="start start">
+		<md-list>
+			<md-list-item ng-click="$state.go('produto.list');closeMenu()">
+				<p>Produto</p>
+			</md-list-item>
+		</md-list>
+	</div>
+	<div  layout-align="start start">
+		<md-list>
+			<md-list-item ng-click="$state.go('usuario.list');closeMenu()">
+				<p>Usuário</p>
+			</md-list-item>
+		</md-list>
+		<md-list-item>
+			<a href="http://localhost:8080/logout">Sair</a>
+		</md-list-item>
+	</div>
+</md-sidenav>

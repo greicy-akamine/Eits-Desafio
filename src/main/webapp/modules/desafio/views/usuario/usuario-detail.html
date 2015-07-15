@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div layout="column">
+  <md-toolbar class="md-primary">
+    <h1 class="md-toolbar-tools">
+      VISUALIZAR USUÁRIO
+    </h1>
+  </md-toolbar> 
+  
+   <md-content layout-padding style="padding: 24px;">
+		 <form>
+    
+    	<md-input-container>
+		  <label>Nome</label>
+	 	  <input ng-model="model.usuario.nome">
+	 	</md-input-container>
+				
+				
+		<md-input-container>
+		  <label>Departamento</label>
+		   <input ng-model="model.usuario.departamento">
+		</md-input-container>
+	
+	
+		<md-input-container>
+		  <label>E-mail</label>
+		   <input ng-model="model.usuario.email">
+		</md-input-container>
+	
+	
+	  <md-select ng-model="produtoController.cadastrar.cbCategoria" placeholder="Selecione uma categoria">
+			<md-option ng-value="categoria" ng-repeat="categoria in produtoController.categorias">{{ categoria.descricao }}</md-option>
+		 </md-select> 
+		  
+	  
+		<md-input-container>
+		  <label>Senha</label>
+		  <input ng-model="model.usuario.senha">
+		</md-input-container>
+    
+    
+		<md-input-container>
+		  <label>Status</label>
+		  <input ng-model="model.usuario.status">
+		</md-input-container>
+		
+		
+		<md-input-container>
+		  <label>Perfil</label>
+		  <input ng-model="model.usuario.perfil">
+		</md-input-container>
+		
+		</form>
+		</md-content>
+		
+        
+</body>
+</html>

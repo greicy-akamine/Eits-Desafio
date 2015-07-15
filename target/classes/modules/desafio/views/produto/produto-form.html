@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Cadastrar Produto</title>
+</head>
+<body>
+<div layout="column">
+  <md-toolbar class="md-primary">
+    <h1 class="md-toolbar-tools">
+      CADASTRAR PRODUTO
+    </h1>
+  </md-toolbar>
+	
+		 <md-content layout-padding style="padding: 24px;">
+		 <form>
+	
+		<md-input-container>
+		  <label>Código do Produto</label>
+		  <input type="text" ng-model="model.produto.codigoProduto" required md-maxlength="10">
+		</md-input-container>
+				
+				
+		<md-input-container>
+		  <label>Descrição</label>
+		  <input type="text" ng-model="model.produto.descricao" required md-maxlength="144">
+		</md-input-container>
+	
+	
+	  <md-select ng-model="model.produto.categoria" placeholder="Selecione uma categoria">
+	  
+			<md-option ng-value="categoria" ng-selected="model.produto.categoria.id == categoria.id" ng-repeat="categoria in model.categorias"> {{categoria.descricao}} </md-option>
+		 </md-select> 
+		  
+	  
+		<md-input-container>
+		  <label>Observação</label>
+		  <input type="text" ng-model="model.produto.observacao" required md-maxlength="255">
+		</md-input-container>
+  
+
+</form>
+</md-content>
+
+<md-button class="md-fab md-fab-bottom-right md-primary md-icon-lg md-icon-save md-primary" aria-label="Salvar Produto"
+					    ng-click="insertProdutoHandler()" >
+	  	<md-tooltip>Salvar</md-tooltip>
+   	  </md-button>
+  
+	</div>
+</body>
+</html>

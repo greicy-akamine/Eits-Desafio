@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div layout="column">
+  <md-toolbar class="md-primary">
+    <h1 class="md-toolbar-tools">
+      VISUALIZAR PRODUTO
+    </h1>
+  </md-toolbar> 
+    
+     <md-content layout-padding style="padding: 24px;">
+		 <form>
+    
+    	<md-input-container>
+		  <label>Código do Produto</label>
+	 	  <input ng-model="model.produto.codigoProduto">
+	 	</md-input-container>
+				
+				
+		<md-input-container>
+		  <label>Descrição</label>
+		   <input ng-model="model.produto.descricao">
+		</md-input-container>
+	
+	
+		<md-input-container>
+		  <label>Categoria</label>
+		   <input ng-model="model.produto.categoria.descricao">
+		</md-input-container>
+	
+	
+		<md-input-container>
+		  <label>Observação</label>
+		  <input ng-model="model.produto.observacao">
+		</md-input-container>
+    
+    </form>
+    </md-content>
+    
+    
+</body>
+</html>
